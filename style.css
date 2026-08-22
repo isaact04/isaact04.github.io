@@ -1,0 +1,357 @@
+/* ============================================
+   DESIGN TOKENS
+   "Night" = default stage-lights-low theme
+   "Day"   = stage-lights-on theme
+   Swapping the data-theme attribute on <body> swaps every variable below.
+   ============================================ */
+:root {
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius: 14px;
+}
+
+body[data-theme="night"] {
+  --bg: #12121f;
+  --bg-elevated: #1b1b2e;
+  --text: #f5f3ed;
+  --text-muted: #a6a3bd;
+  --accent: #7b5fff;
+  --accent-soft: rgba(123, 95, 255, 0.25);
+  --gold: #f2c879;
+  --rose: #ff6f91;
+  --spotlight-color: rgba(123, 95, 255, 0.35);
+}
+
+body[data-theme="day"] {
+  --bg: #f5f3ed;
+  --bg-elevated: #ffffff;
+  --text: #1b1b2e;
+  --text-muted: #5b5876;
+  --accent: #5a3fd6;
+  --accent-soft: rgba(90, 63, 214, 0.15);
+  --gold: #b8791f;
+  --rose: #d6446a;
+  --spotlight-color: rgba(242, 200, 121, 0.35);
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  transition: background 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   THEME TOGGLE
+   ============================================ */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-soft);
+  background: var(--bg-elevated);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+/* ============================================
+   HERO / SPOTLIGHT
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 40px 20px;
+}
+
+/* This glow follows the cursor via JS setting --x / --y custom properties */
+.spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle 380px at var(--x, 50%) var(--y, 20%),
+    var(--spotlight-color),
+    transparent 70%
+  );
+  transition: background 0.4s ease;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.photo-frame {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  padding: 6px;
+  animation: float 5s ease-in-out infinite;
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 10px;
+}
+
+.photo-placeholder span {
+  font-size: 2rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.hero-name .accent {
+  color: var(--accent);
+}
+
+.hero-tag {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 24px 80px;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+  margin-top: 56px;
+}
+
+.bio-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.facts-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.facts-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.facts-list li:hover {
+  border-color: var(--accent-soft);
+  transform: translateX(4px);
+}
+
+.fact-tag {
+  font-family: var(--font-mono);
+  color: var(--gold);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   INTERACTIVE FLIP-CARD FACT GENERATOR
+   ============================================ */
+.generator-section {
+  text-align: center;
+}
+
+.generator-hint {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+.flip-card {
+  width: 100%;
+  max-width: 340px;
+  height: 200px;
+  margin: 0 auto;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px;
+  border: 1px solid var(--accent-soft);
+}
+
+.flip-card-front {
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.flip-icon {
+  font-size: 2rem;
+}
+
+.flip-card-back {
+  background: linear-gradient(160deg, var(--accent), var(--rose));
+  color: #fff;
+  transform: rotateY(180deg);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.fact-btn {
+  margin-top: 20px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--accent-soft);
+}
+
+.fact-btn:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  text-align: center;
+  padding: 30px 20px 40px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: 2.2rem;
+  }
+  main {
+    padding: 20px 18px 60px;
+  }
+}
+
+/* Respect users who've asked for less motion */
+@media (prefers-reduced-motion: reduce) {
+  .photo-frame,
+  .flip-card-inner,
+  .theme-toggle,
+  .facts-list li {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* so that image fits inside the circle */
+.photo-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}

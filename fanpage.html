@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stephen Curry | Fan Page</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="night">
+
+  <!-- STAGE LIGHT TOGGLE (theme switcher) -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle stage lights">
+    <span id="theme-icon">🌙</span> <span id="theme-label">Lights: Low</span>
+  </button>
+
+  <!-- HERO SECTION: name + photo -->
+  <header class="hero" id="hero">
+    <div class="spotlight" id="spotlight"></div>
+
+    <div class="hero-content">
+      <!--
+        PHOTO SLOT:
+        Replace this placeholder <div> with a real <img> tag once you have
+        a photo saved in your project folder, e.g:
+        <img src="curry.jpg" alt="Stephen Curry shooting a three-pointer">
+      -->
+      <div class="photo-frame">
+        <img src="images/steph.jpg" alt="Stephen Curry" class="photo-img"
+      </div>
+
+      <h1 class="hero-name">STEPH<span class="accent">CURRY</span></h1>
+      <p class="hero-tag">Point Guard · Golden State Warriors · #30</p>
+    </div>
+  </header>
+
+  <!-- BIO SECTION -->
+  <main>
+    <section class="bio-section">
+      <h2 class="section-label">// Bio</h2>
+      <p class="bio-text">
+        Stephen Curry is widely credited with reshaping modern basketball by
+        turning the three-pointer from a situational weapon into the center
+        of an offense. Undersized by NBA standards coming out of Davidson
+        College, he built a career on elite shooting range, ball-handling,
+        and relentless off-ball movement — becoming a four-time NBA champion
+        and one of the most influential players of his generation.
+      </p>
+    </section>
+
+    <!-- FACTS SECTION -->
+    <section class="facts-section">
+      <h2 class="section-label">// Backstage Facts</h2>
+      <ul class="facts-list">
+        <li><span class="fact-tag">01</span> Wasn't offered a scholarship by most major programs out of high school — Davidson College took a chance on him.</li>
+        <li><span class="fact-tag">02</span> Set the single-season three-point record multiple times over his career, redefining what "efficient offense" looks like.</li>
+        <li><span class="fact-tag">03</span> Won back-to-back MVP awards, including the first unanimous MVP vote in NBA history.</li>
+        <li><span class="fact-tag">04</span> Has a shooting warm-up routine so precise it's studied by coaches at every level.</li>
+        <li><span class="fact-tag">05</span> Runs a foundation focused on education access, alongside basketball camps for young players.</li>
+      </ul>
+    </section>
+
+    <!-- INTERACTIVE FEATURE: fun-fact generator flip card -->
+    <section class="generator-section">
+      <h2 class="section-label">// Fact Generator</h2>
+      <p class="generator-hint">Tap the card for a random backstage story.</p>
+
+      <div class="flip-card" id="flip-card">
+        <div class="flip-card-inner" id="flip-card-inner">
+          <div class="flip-card-front">
+            <span class="flip-icon">🎤</span>
+            <span>Tap for a fact</span>
+          </div>
+          <div class="flip-card-back">
+            <p id="random-fact">Click to reveal...</p>
+          </div>
+        </div>
+      </div>
+
+      <button id="new-fact-btn" class="fact-btn">🎲 New Fact</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Unofficial fan page · Built for practice, not affiliated with the NBA or Stephen Curry.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
