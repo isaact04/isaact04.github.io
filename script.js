@@ -1,7 +1,3 @@
-/* ============================================
-   DATA (this is your "model" — swap these facts
-   for real ones about your chosen celebrity)
-   ============================================ */
 const randomFacts = [
   "Grew up rebounding for his dad, Dell Curry, during Charlotte Hornets shootarounds.",
   "Played college ball at Davidson, a small school with almost no NBA pedigree before him.",
@@ -13,8 +9,6 @@ const randomFacts = [
 
 /* ============================================
    1. THEME TOGGLE ("stage lights")
-   Reads/writes a data-theme attribute on <body>,
-   which is what the CSS variables in style.css hook into.
    ============================================ */
 const body = document.body;
 const themeToggleBtn = document.getElementById("theme-toggle");
