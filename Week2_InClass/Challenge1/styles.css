@@ -94,7 +94,6 @@ p {
     margin-right: 40px;
     border-radius: 12px;
     box-shadow: 0 2px 20px darkorchid;
-    /* transition: background-color 120ms ease, transform 80ms ease; */
 }
 
 .make-donation:hover {
@@ -107,6 +106,4 @@ p {
     margin-top: 40px;
     border-top: 1px solid rgb(190,189,189);
     color: grey;
-
-
 }
