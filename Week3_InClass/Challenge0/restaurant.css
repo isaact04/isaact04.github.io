@@ -1,0 +1,41 @@
+/* DO NOT MODIFY THE BELOW CSS STYLING */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* YOU MAY MODIFY THIS */
+#floor {
+    width: 600px;
+    height: 420px;
+    background-color: aqua;
+    border: 1px solid black;
+}
+
+
+/* YOU MAY MODIFY THIS */
+.dining-table {
+    background-color: pink;
+}
+
+
+/* YOU MAY MODIFY THIS */
+.row {
+
+}
+
+
+/* YOU MAY MODIFY THIS */
+.buffet-corner {
+
+}
+
+
+/* YOU MAY MODIFY THIS */
+.cashier-table {
+
+}
+
+
+/* YOU MAY ADD MORE CSS STYLING ANYWHERE IN THIS FILE */

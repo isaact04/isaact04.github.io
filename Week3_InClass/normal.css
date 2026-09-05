@@ -1,0 +1,44 @@
+/* Universal Selector */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#box1 {
+  background-color: red;
+}
+
+#box2 {
+  background-color: yellow;
+}
+
+#box3 {
+  background-color: green;
+}
+
+.parent {
+  /* default is 'block' */
+  display: flex;
+}
+
+/* On screens that are 600px or less, 
+   we want the child boxes to appear
+   stacking on top of each other
+   (instead of side by side) */
+
+@media screen and (max-width: 600px) {
+  .parent {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+    #box1, #box2 {
+        opacity: 0.5;
+    }
+
+    #box3 {
+        background-color: black;
+        color: white;
+    }
+} 
