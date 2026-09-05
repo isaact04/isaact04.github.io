@@ -1,3 +1,155 @@
-<h1> Hello, I am Isaac </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isaac's Personal Website</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Isaac</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+            >
+              Projects
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Project 1</a></li>
+              <li><a class="dropdown-item" href="#">Project 2</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Project 3</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <div class="container my-5">
+
+    <!-- ===================== CARDS SECTION ===================== -->
+    <section class="mb-5">
+      <h2 class="mb-4">Cards</h2>
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Card Title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6>
+              <p class="card-text">Some quick example text for this card.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Card Title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6>
+              <p class="card-text">Some quick example text for this card.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Card Title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6>
+              <p class="card-text">Some quick example text for this card.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== FORM SECTION ===================== -->
+    <section class="mb-5">
+      <h2 class="mb-4">Contact Form</h2>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Your name">
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        </div>
+
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="topic" class="form-label">Topic</label>
+          <select class="form-select" id="topic">
+            <option selected>Choose a topic...</option>
+            <option value="1">General</option>
+            <option value="2">Feedback</option>
+            <option value="3">Collaboration</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </section>
+
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-dark text-light text-center py-3">
+    <p class="mb-0">&copy; 2026 Isaac. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS Bundle (needed for navbar toggle + dropdown) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
 
 
